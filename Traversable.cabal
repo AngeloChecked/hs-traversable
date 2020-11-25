@@ -4,15 +4,15 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0352d0f33e4729c06589d92ac98a06b099fa0774d21d547028a8de32e5ecec79
+-- hash: 022c8626b718bbd067c8231c6cc7ddc4b9fa71a07cd682f44e2c2e0a59fd2c52
 
-name:           Traversable 
+name:           Traversable
 version:        0.1.0.0
 build-type:     Simple
 
 library
   exposed-modules:
-      Traversable 
+      Traversable
   other-modules:
       Paths_Traversable
   hs-source-dirs:
@@ -24,17 +24,18 @@ library
     , hspec
   default-language: Haskell2010
 
-test-suite Traversable-test
+test-suite Foldable-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      TraversableSpec
       Paths_Traversable
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      Traversable 
-    , QuickCheck
+      QuickCheck
+    , Traversable
     , base >=4.7 && <5
     , checkers
     , hspec
